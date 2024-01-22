@@ -1,0 +1,252 @@
+@use "common/theme" as theme;
+
+// @mixin positioning($top, $right, $bottom, $left) {
+//   top: $top;
+//   right: $right;
+//   bottom: $bottom;
+//   left: $left;
+// }
+
+#heroContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: linear-gradient(
+    to right bottom,
+    #505050,
+    #454446,
+    #3b383b,
+    #322c2f,
+    #2a2023,
+    #251a1c,
+    #211516,
+    #1d0e0d,
+    #1c0b0a,
+    #1b0707,
+    #190403,
+    #180000
+  );
+
+  .sidePortfolioSlogan {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+
+    img {
+      width: 55px;
+      opacity: 0.2;
+    }
+  }
+
+  .heroContentCont {
+    width: 86%;
+    display: flex;
+    align-items: center;
+
+    .leftSideContent {
+      width: 60%;
+      font-size: 1em;
+      // background-color: lightsalmon;
+
+      h5 {
+        font-size: 1.7em;
+        color: theme.$mainColor03;
+      }
+
+      h1 {
+        font-size: 3.8em;
+        color: #fff;
+        margin-bottom: -4px;
+      }
+
+      h4 {
+        font-size: 1.8em;
+        font-weight: 500;
+        color: #fff;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1.45em;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        word-spacing: 0.5px;
+        color: theme.$textColorMedium01;
+        margin-bottom: 12px;
+        padding: 0px 40px 0px 0px;
+      }
+
+      h3 {
+        font-size: 2.2em;
+        font-weight: 600;
+        color: #eee;
+        margin-bottom: 20px;
+
+        span {
+          color: theme.$mainColor04;
+          font-weight: 700;
+        }
+      }
+
+      .downloadCV-Btn {
+        padding: 8px 18px;
+        font-size: 1.7em;
+        font-weight: 700;
+        font-family: "Quicksand", sans-serif;
+        color: theme.$mainColor02;
+        background: transparent;
+        border-radius: 4px;
+        border: 2px solid theme.$mainColor02;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: theme.$textColorLight;
+          border: 2px solid theme.$mainColor02;
+          background-color: theme.$mainColor02;
+        }
+      }
+
+      .socialLinks {
+        margin-top: 50px;
+        display: flex;
+        gap: 20px;
+
+        span {
+          border-radius: 100%;
+          transition: all 0.1s linear;
+
+          &:hover {
+            box-shadow: 0 0 15px theme.$mainColor03;
+          }
+
+          a {
+            color: theme.$mainColor03;
+            font-size: 1.4rem;
+            display: flex;
+            padding: 11px;
+            border: 2px solid theme.$mainColor03;
+            border-radius: 100%;
+
+            &:hover > .socialIcon {
+              transform: scale(1.15);
+              filter: drop-shadow(0 0 2px #666);
+            }
+
+            .socialIcon {
+              transform: scale(1);
+              transition: all 0.1s linear;
+            }
+          }
+        }
+      }
+    }
+
+    .rightSideContent {
+      width: 40%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // background-color: darkcyan;
+
+      .rotatingIcons {
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        position: absolute;
+        background-color: transparent;
+        animation: roundAnimate 15s linear 0s infinite forwards;
+        // background-color: darkkhaki;
+
+        @keyframes roundAnimate {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+        .icon {
+          position: absolute;
+          font-size: 2.6rem;
+          display: flex;
+          animation: straightRotate 15s linear 0s infinite forwards;
+
+          @keyframes straightRotate {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(-360deg);
+            }
+          }
+        }
+
+        .icon1 {
+          top: 8%;
+          left: 8%;
+          color: #08ee69;
+        }
+
+        .icon2 {
+          top: 8%;
+          right: 8%;
+          color: #08e0ff;
+        }
+
+        .icon3 {
+          bottom: 8%;
+          right: 8%;
+          color: #619b5a;
+        }
+
+        .icon4 {
+          bottom: 8%;
+          left: 8%;
+          color: #ffffff;
+        }
+      }
+
+      .centerHeroImage {
+        width: 90%;
+        height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // background-color: darkorchid;
+
+        img {
+          width: 280px;
+          height: 280px;
+          object-fit: cover;
+          margin-bottom: 25px;
+          animation: movingImage 3s ease-in-out 0s infinite alternate;
+          // background-color: darkorange;
+        }
+
+        @keyframes movingImage {
+          from {
+            transform: translateY(-2%);
+          }
+          to {
+            transform: translateY(2%);
+          }
+        }
+      }
+    }
+  }
+}
+
+@import "media/heroMedia.scss";

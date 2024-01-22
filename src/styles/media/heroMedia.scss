@@ -1,0 +1,167 @@
+// <---- Responsive Sizes ----->
+// 320px
+// 480px
+// 600px
+// 768px
+// 900px
+// 1024px
+// 1200px
+
+/* Mobile Small */
+@media (max-width: 375px) {
+}
+
+/* Mobile Regular */
+@media (376px <= width <= 480px) {
+}
+
+/* Mobile Large OR Tablet Small */
+@media (481px <= width <= 600px) {
+}
+
+/* Tablet Regular OR Laptop Small */
+@media (601px <= width <= 768px) {
+}
+
+/* Laptop Medium */
+@media (769px <= width <= 900px) {
+}
+
+/* Laptop Large */
+@media (901px <= width <= 1024px) {
+}
+
+/* Laptop Xtra Large */
+@media (1025px <= width <= 1200px) {
+  #heroContainer {
+    .sidePortfolioSlogan img {
+      width: 50px;
+      opacity: 0.2;
+    }
+
+    .heroContentCont {
+      .leftSideContent {
+        h1 {
+          font-size: 3.6em;
+        }
+
+        h4 {
+          font-size: 1.9em;
+        }
+
+        p {
+          padding: 0px 70px 0px 0px;
+        }
+
+        .downloadCV-Btn {
+          padding: 7px 16px;
+        }
+
+        .socialLinks {
+          margin-top: 40px;
+          display: flex;
+          gap: 20px;
+
+          span {
+            border-radius: 100%;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+              box-shadow: 0 0 15px theme.$mainColor03;
+            }
+
+            a {
+              font-size: 1.35rem;
+              padding: 10px;
+
+              &:hover > .socialIcon {
+                transform: scale(1.12);
+              }
+            }
+          }
+        }
+      }
+
+      .rightSideContent {
+        .rotatingIcons {
+          width: 350px;
+          height: 350px;
+
+          .icon {
+            font-size: 2.4rem;
+          }
+
+          .icon1 {
+            top: 4%;
+            left: 4%;
+          }
+
+          .icon2 {
+            top: 4%;
+            right: 4%;
+          }
+
+          .icon3 {
+            bottom: 4%;
+            right: 4%;
+          }
+
+          .icon4 {
+            bottom: 4%;
+            left: 4%;
+          }
+        }
+
+        .centerHeroImage {
+          width: 90%;
+          height: 90%;
+
+          img {
+            width: 260px;
+            height: 260px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Widescreen */
+@media (min-width: 1201px) {
+}
+
+// --------------------------------------------------
+// /* Mobile Small */
+// @media (max-width: 375px) {
+// }
+
+// /* Mobile Regular */
+// @media (376px <= width <= 480px) {
+// }
+
+// /* Mobile Large OR Tablet Small */
+// @media (481px <= width <= 600px) {
+// }
+
+// /* Tablet Regular OR Laptop Small */
+// @media (601px <= width <= 768px) {
+// }
+
+// /* Laptop Medium */
+// @media (769px <= width <= 900px) {
+// }
+
+// /* Laptop Large */
+// @media (901px <= width <= 1024px) {
+// }
+
+// /* Laptop Xtra Large */
+// @media (1025px <= width <= 1200px) {
+// }
+
+// /* Widescreen */
+// @media (min-width: 1201px) {
+// }
+
+/* Landscape */
+/* @media(max-height: 500px) {} */

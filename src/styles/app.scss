@@ -1,0 +1,54 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 10px;
+  font-family: "Quicksand", sans-serif !important;
+}
+
+#app {
+  width: 100%;
+  position: relative;
+}
+
+/* Mobile Small */
+@media (max-width: 375px) {
+}
+
+/* Mobile Regular */
+@media (376px <= width <= 480px) {
+}
+
+/* Mobile Large OR Tablet Small */
+@media (481px <= width <= 600px) {
+}
+
+/* Tablet Regular OR Laptop Small */
+@media (601px <= width <= 768px) {
+}
+
+/* Laptop Medium */
+@media (769px <= width <= 900px) {
+  body {
+    font-size: 8.8px;
+  }
+}
+
+/* Laptop Large */
+@media (901px <= width <= 1024px) {
+  body {
+    font-size: 9px;
+  }
+}
+
+/* Laptop Xtra Large */
+@media (1025px <= width <= 1200px) {
+  body {
+    font-size: 9.5px;
+  }
+}
