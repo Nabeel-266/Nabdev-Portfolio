@@ -1,18 +1,7 @@
-@use "../common/theme" as theme;
-
-// <---- Responsive Sizes ----->
-// 320px
-// 480px
-// 600px
-// 768px
-// 900px
-// 1024px
-// 1200px
-
 /* Mobile Small */
 @media (max-width: 375px) {
   .navbar {
-    height: 9vh;
+    height: 55px;
 
     .innerNav {
       .sidebarSwitch {
@@ -43,8 +32,14 @@
         height: 24px;
         margin-left: 20px;
 
+        input {
+          &:checked + .slider:before {
+            transform: translateX(26px);
+          }
+        }
+
         .slider:before {
-          height: 22px;
+          height: 20px;
           width: 22px;
         }
 
@@ -69,7 +64,7 @@
 /* Mobile Regular */
 @media (376px <= width <= 480px) {
   .navbar {
-    height: 9vh;
+    height: 55px;
 
     .innerNav {
       .sidebarSwitch {
@@ -100,8 +95,14 @@
         height: 24px;
         margin-left: 20px;
 
+        input {
+          &:checked + .slider:before {
+            transform: translateX(26px);
+          }
+        }
+
         .slider:before {
-          height: 22px;
+          height: 20px;
           width: 22px;
         }
 
@@ -129,10 +130,6 @@
     .sidebarSwitch {
       display: flex;
       margin-right: 20px;
-
-      .sidebarIcon {
-        font-size: 1.3rem;
-      }
     }
 
     .logoArea {
@@ -153,8 +150,14 @@
       height: 25px;
       margin-left: 20px;
 
+      input {
+        &:checked + .slider:before {
+          transform: translateX(26px);
+        }
+      }
+
       .slider:before {
-        height: 23px;
+        height: 21px;
         width: 24px;
       }
 
@@ -175,16 +178,12 @@
   }
 }
 
-/* Tablet Regular OR Laptop Small */
+/* Tablet Medium */
 @media (601px <= width <= 768px) {
   .navbar .innerNav {
     .sidebarSwitch {
       display: flex;
       margin-right: 30px;
-
-      .sidebarIcon {
-        font-size: 1.3rem;
-      }
     }
 
     .logoArea {
@@ -205,9 +204,59 @@
       height: 25px;
       margin-left: 20px;
 
+      input {
+        &:checked + .slider:before {
+          transform: translateX(28px);
+        }
+      }
+
       .slider:before {
-        height: 23px;
-        width: 24px;
+        height: 21px;
+        width: 22px;
+      }
+
+      .sun svg {
+        top: 2.4px;
+        right: 4px;
+        width: 19.5px;
+        height: 19.5px;
+      }
+
+      .moon svg {
+        top: 2.4px;
+        left: 4px;
+        width: 19.5px;
+        height: 19.5px;
+      }
+    }
+  }
+}
+
+/* Tablet Large OR Laptop Small */
+@media (769px <= width <= 900px) {
+  .navbar .innerNav {
+    .logoArea :nth-child(1) {
+      width: 115px;
+    }
+
+    .navigation ul li a {
+      font-size: 1.38em;
+    }
+
+    .toggleTheme .themeSwitch {
+      width: 54px;
+      height: 25px;
+      margin-left: 25px;
+
+      input {
+        &:checked + .slider:before {
+          transform: translateX(28px);
+        }
+      }
+
+      .slider:before {
+        height: 21px;
+        width: 22px;
       }
 
       .sun svg {
@@ -228,40 +277,6 @@
 }
 
 /* Laptop Medium */
-@media (769px <= width <= 900px) {
-  .navbar .innerNav {
-    .logoArea :nth-child(1) {
-      width: 112px;
-    }
-
-    .toggleTheme .themeSwitch {
-      width: 54px;
-      height: 25px;
-      margin-left: 20px;
-
-      .slider:before {
-        height: 23px;
-        width: 24px;
-      }
-
-      .sun svg {
-        top: 2.4px;
-        right: 4px;
-        width: 19.5px;
-        height: 19.5px;
-      }
-
-      .moon svg {
-        top: 2.4px;
-        left: 4px;
-        width: 19.5px;
-        height: 19.5px;
-      }
-    }
-  }
-}
-
-/* Laptop Large */
 @media (901px <= width <= 1024px) {
   .navbar .innerNav {
     .logoArea :nth-child(1) {
@@ -273,9 +288,15 @@
       height: 26px;
       margin-left: 25px;
 
+      input {
+        &:checked + .slider:before {
+          transform: translateX(28px);
+        }
+      }
+
       .slider:before {
-        height: 24px;
-        width: 26px;
+        height: 22px;
+        width: 24px;
       }
 
       .sun svg {
@@ -293,7 +314,7 @@
   }
 }
 
-/* Laptop Xtra Large */
+/* Laptop Large */
 @media (1025px <= width <= 1200px) {
   .navbar .innerNav {
     .logoArea :nth-child(1) {
@@ -305,9 +326,15 @@
       height: 28px;
       margin-left: 30px;
 
+      input {
+        &:checked + .slider:before {
+          transform: translateX(30px);
+        }
+      }
+
       .slider:before {
-        height: 26px;
-        width: 28px;
+        height: 24px;
+        width: 26px;
       }
 
       .sun svg {
@@ -325,9 +352,8 @@
   }
 }
 
-/* Widescreen */
-@media (min-width: 1201px) {
-}
+/* laptop Xtra OR Widescreen */
+// @media (min-width: 1201px) {}
 
 /* Landscape */
 /* @media(max-height: 500px) {} */

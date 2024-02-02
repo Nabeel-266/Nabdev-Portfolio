@@ -1,0 +1,33 @@
+.overlay {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 1010;
+  overflow: hidden;
+
+  @keyframes addOverlay {
+    from {
+      display: none;
+      background-color: transparent;
+      backdrop-filter: blur(0px);
+    }
+    to {
+      display: block;
+      background-color: var(--shadeColor01);
+      backdrop-filter: blur(8px);
+    }
+  }
+
+  @keyframes removeOverlay {
+    from {
+      display: block;
+      background-color: var(--shadeColor01);
+      backdrop-filter: blur(8px);
+    }
+    to {
+      background-color: transparent;
+      backdrop-filter: blur(0px);
+      display: none;
+    }
+  }
+}

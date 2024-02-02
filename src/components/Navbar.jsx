@@ -1,47 +1,102 @@
-import "../styles/navbar.scss";
-import Logo from "../assets/Logo.png";
+import { Link } from "react-scroll";
+
+// Import Logo
+import LogoLMT from "../assets/Logo-LMT.png";
+import LogoDMT from "../assets/Logo-DMT.png";
 
 // React Icon
 import { CgMenuLeft } from "react-icons/cg";
 
-const Navbar = () => {
+const Navbar = ({ isDarkTheme, setIsDarkTheme, setIsOpenSidebar }) => {
   return (
     <nav className="navbar">
       <div className="innerNav">
         {/* Sidebar Button */}
-        <button className="sidebarSwitch">
+        <button className="sidebarSwitch" onClick={() => setIsOpenSidebar(true)}>
           <CgMenuLeft className="sidebarIcon" />
         </button>
 
         {/* Logo */}
         <div className="logoArea">
-          <img src={Logo} alt="logo" />
+          <img src={isDarkTheme ? LogoDMT : LogoLMT} alt="logo" />
         </div>
 
         {/* Navigation */}
         <div className="navigation">
           <ul>
             <li>
-              <a href="#">Home</a>
+              <Link
+                activeClass="active"
+                to="hero"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+              >
+                Home
+              </Link>
             </li>
             <li>
-              <a href="#">About Me</a>
+              <Link
+                activeClass="active"
+                to="about"
+                spy={true}
+                smooth={true}
+                offset={-65}
+                duration={500}
+              >
+                About Me
+              </Link>
             </li>
             <li>
-              <a href="#">Services</a>
+              <Link
+                activeClass="active"
+                to="services"
+                spy={true}
+                smooth={true}
+                offset={-65}
+                duration={500}
+              >
+                Services
+              </Link>
             </li>
             <li>
-              <a href="#">Skills</a>
+              <Link
+                activeClass="active"
+                to="skills"
+                spy={true}
+                smooth={true}
+                offset={-65}
+                duration={500}
+              >
+                Skills
+              </Link>
             </li>
             <li>
-              <a href="#">Projects</a>
+              <Link
+                activeClass="active"
+                to="projects"
+                spy={true}
+                smooth={true}
+                offset={-65}
+                duration={500}
+              >
+                Projects
+              </Link>
             </li>
             <li>
-              <a href="#">Contact Me</a>
+              <Link
+                activeClass="active"
+                to="contact"
+                spy={true}
+                smooth={true}
+                offset={-65}
+                duration={500}
+              >
+                Contact Me
+              </Link>
             </li>
           </ul>
-
-          {/* <button className="resumeBtn">My Resume</button> */}
         </div>
 
         {/* Toggle Theme Switch */}
@@ -60,7 +115,12 @@ const Navbar = () => {
                 <path d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path>
               </svg>
             </span>
-            <input type="checkbox" className="input" />
+            <input
+              type="checkbox"
+              className="input"
+              onChange={() => setIsDarkTheme(!isDarkTheme)}
+              checked={isDarkTheme ? true : false}
+            />
             <span className="slider"></span>
           </label>
         </div>

@@ -1,12 +1,13 @@
-import "../styles/home.scss";
-
 // Components
+import About from "../components/About";
 import Hero from "../components/Hero";
 
-const Home = () => {
+const Home = ({ isDarkTheme }) => {
   return (
-    <div id="home">
-      <Hero />
+    <div id="homeContainer">
+      <Hero isDarkTheme={isDarkTheme} />
+
+      <About />
     </div>
   );
 };

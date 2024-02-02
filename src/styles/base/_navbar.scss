@@ -1,48 +1,40 @@
-@use "common/theme" as theme;
+@use "../common/mixin" as *;
 
 .navbar {
   width: 100%;
-  height: 9.5vh;
+  height: 60px;
   position: fixed;
   z-index: 1000;
-  backdrop-filter: blur(50px);
   padding: 0% 4%;
-  display: flex;
-  align-items: center;
+  @include flex(flex, flex-start, center);
+  backdrop-filter: blur(50px);
   background-color: transparent;
 
   .innerNav {
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    // background-color: darkkhaki;
+    @include flex(flex, space-between, center);
 
     // For Sidebar Icon
     .sidebarSwitch {
       display: none;
-      background-color: rgba(236, 42, 42, 0.8);
+      background-color: var(--textColor01);
       padding: 1px 2px;
       border-radius: 4px;
       border: none;
-      box-shadow: 0px 0px 10px #444;
+      box-shadow: 0px 0px 10px var(--textColor03);
 
       .sidebarIcon {
-        font-size: 1.6rem;
-        font-weight: bold;
-        color: theme.$textColorLight;
+        @include font(var(--textColor03), 1.3rem, bold);
       }
     }
 
     // For Logo
     .logoArea {
       width: 20%;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
+      @include flex(flex, flex-start, center);
       overflow: hidden;
-      padding: 0% 3%;
+      padding: 0% 1%;
       // background-color: lightblue;
 
       & :nth-child(1) {
@@ -53,22 +45,16 @@
     /* For Navigations */
     .navigation {
       width: 70%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
+      @include flex(flex, flex-end, center);
       gap: 6%;
       position: relative;
-      // background-color: lightcoral;
 
       ul {
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
+        @include flex(flex, flex-end, center);
         gap: 4%;
         list-style: none;
         margin-bottom: 1px !important;
-        // background-color: rgb(119, 179, 199);
 
         li {
           position: relative;
@@ -76,13 +62,13 @@
           &::before {
             content: "";
             position: absolute;
-            bottom: 0px;
+            bottom: -2px;
             left: 0;
             height: 2px;
             width: 100%;
             border-radius: 100px;
             border-radius: 25px;
-            background-color: theme.$mainColor02;
+            background-color: var(--mainColor02);
             transition: 0.5s;
             transform: scaleX(0);
           }
@@ -92,44 +78,22 @@
           }
 
           a {
-            font-size: 1.6em;
+            @include font(var(--textColor01), 1.6em, 600);
             text-decoration: none;
             font-family: "Quicksand", sans-serif;
-            color: theme.$textColorLight;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.2px;
             white-space: nowrap;
+            cursor: pointer;
           }
         }
       }
-
-      // .resumeBtn {
-      //   padding: 6px 15px;
-      //   font-size: 0.85rem;
-      //   font-weight: 600;
-      //   font-family: "Quicksand", sans-serif;
-      //   color: theme.$textColorLight;
-      //   background: linear-gradient(to left, #d63333, #f09816);
-      //   border-radius: 2px;
-      //   border: none;
-      //   white-space: nowrap;
-      //   cursor: pointer;
-      //   transition: all 0.3s ease-in-out;
-
-      //   &:hover {
-      //     transform: translateY(-2px);
-      //     box-shadow: 2px 2px 5px #505050;
-      //   }
-      // }
     }
 
     // For Toggle Theme
     .toggleTheme {
-      display: flex;
-      justify-content: flex-end;
+      @include flex(flex, flex-end, center);
 
       .themeSwitch {
-        font-size: 1.2em;
         position: relative;
         display: inline-block;
         width: 64px;
@@ -150,7 +114,7 @@
           }
 
           &:checked + .slider:before {
-            transform: translateX(29px);
+            transform: translateX(32px);
           }
         }
 
@@ -161,6 +125,7 @@
           left: 0;
           right: 0;
           bottom: 0;
+          @include flex(flex, flex-start, center);
           background-color: #38a9ff;
           transition: 0.4s;
           border-radius: 20px;
@@ -168,13 +133,12 @@
           &:before {
             position: absolute;
             content: "";
-            height: 28px;
-            width: 30px;
-            border-radius: 15px;
+            height: 26px;
+            width: 28px;
+            border-radius: 20px;
             left: 2px;
-            bottom: 1px;
             z-index: 2;
-            background-color: theme.$textColorLight;
+            background-color: #eee;
             transition: 0.4s;
           }
         }
@@ -232,4 +196,4 @@
   }
 }
 
-@import "media/navbarMedia";
+@import "../media/navbarMedia";

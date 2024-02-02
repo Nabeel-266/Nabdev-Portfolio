@@ -1,9 +1,10 @@
-import "../styles/hero.scss";
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import coder from "../assets/coder.png";
 
 // React Icons
+import { FaFacebookF } from "react-icons/fa6";
+import { RiInstagramFill } from "react-icons/ri";
 import { PiGithubLogoFill } from "react-icons/pi";
 import { FaLinkedinIn } from "react-icons/fa";
 import { SiMongodb } from "react-icons/si";
@@ -13,9 +14,10 @@ import { SiExpress } from "react-icons/si";
 import { FaFileDownload } from "react-icons/fa";
 
 // Import Images
-import PorfolioSlogan from "../assets/Side-Slogan.png";
+import PorfolioSloganLMT from "../assets/Side-Slogan-LMT.png";
+import PorfolioSloganDMT from "../assets/Side-Slogan-DMT.png";
 
-const Hero = () => {
+const Hero = ({ isDarkTheme }) => {
   const el = useRef(null);
 
   useEffect(() => {
@@ -44,25 +46,28 @@ const Hero = () => {
   }, []);
 
   return (
-    <div id="heroContainer">
+    <div id="hero">
       <div className="sidePortfolioSlogan">
-        <img src={PorfolioSlogan} alt="Slogan" />
+        <img src={isDarkTheme ? PorfolioSloganDMT : PorfolioSloganLMT} alt="Slogan" />
       </div>
 
       <div className="heroContentCont">
         {/* Left Side Content */}
         <div className="leftSideContent">
-          <h5>HI THERE,</h5>
+          <h5>HI THERE ,</h5>
+
           <h1>I Am Muhammad Nabeel</h1>
-          <h4>- & I am MERN Stack Web & App Developer - </h4>
+
           <p>
-            Passionate MERN Stack Web Developer with expertise in creating dynamic and
-            responsive applications. Committed to delivering high-quality solutions that
-            elevate user experiences.
+            Passionate MERN Stack Web Developer with expertise in <br /> creating dynamic
+            and responsive applications. <br /> Committed to delivering high-quality
+            solutions <br /> that elevate user experiences.
           </p>
+
           <h3>
             My Expertise : <span ref={el} />
           </h3>
+
           <button className="downloadCV-Btn">
             <FaFileDownload />
             <span>Download CV</span>
@@ -71,9 +76,22 @@ const Hero = () => {
           <div className="socialLinks">
             <span>
               <a href="#">
+                <FaFacebookF className="socialIcon" />
+              </a>
+            </span>
+
+            <span>
+              <a href="#">
+                <RiInstagramFill className="socialIcon" />
+              </a>
+            </span>
+
+            <span>
+              <a href="#">
                 <PiGithubLogoFill className="socialIcon" />
               </a>
             </span>
+
             <span>
               <a href="#">
                 <FaLinkedinIn className="socialIcon" />
@@ -95,7 +113,7 @@ const Hero = () => {
               <FaNodeJs className="animatedIcon" />
             </span>
             <span className="icon4 icon">
-              <SiExpress className="animatedIcon" />
+              <SiExpress className="animatedIcon" color="#666666" />
             </span>
           </div>
 

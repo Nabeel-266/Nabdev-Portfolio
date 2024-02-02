@@ -1,0 +1,46 @@
+// ----> Mobile Small <----
+@media (max-width: 375px) {
+  .sidebar {
+    width: 250px;
+    display: block;
+
+    .sidebarNavigation ul li a {
+      font-size: 2.1em;
+    }
+
+    .sidebarFooter a {
+      font-size: 3em;
+    }
+  }
+}
+
+// ----> Mobile Regular <----
+@media (376px <= width <= 480px) {
+  .sidebar {
+    width: 250px;
+    display: block;
+
+    .sidebarNavigation ul li a {
+      font-size: 2em;
+    }
+
+    .sidebarFooter a {
+      font-size: 2.8em;
+    }
+  }
+}
+
+// ----> Mobile Large OR Tablet Small <----
+@media (481px <= width <= 600px) {
+  .sidebar {
+    width: 260px;
+    display: block;
+  }
+}
+
+// ----> Tablet Medium <----
+@media (601px <= width <= 768px) {
+  .sidebar {
+    display: block;
+  }
+}

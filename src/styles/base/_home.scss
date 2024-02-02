@@ -1,0 +1,11 @@
+#homeContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+@import "sidebar";
+@import "overlay";
+@import "hero";
+@import "about";

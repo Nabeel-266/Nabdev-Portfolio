@@ -1,0 +1,41 @@
+@mixin flex($display, $justify-content, $align-items) {
+  display: $display;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin font($color, $size, $weight) {
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin button(
+  $fontSize,
+  $fontWeight,
+  $fontFamily,
+  $paddingY,
+  $paddingX,
+  $color,
+  $backgroundColor,
+  $borderWidth,
+  $borderStyle,
+  $borderColor,
+  $cursor,
+  $borderRadius
+) {
+  @include font($color, $fontSize, $fontWeight);
+  padding: $paddingY $paddingX;
+  font-family: $fontFamily;
+  background: $backgroundColor;
+  border-radius: $borderRadius;
+  border: $borderWidth $borderStyle $borderColor;
+  cursor: $cursor;
+}
+
+@mixin hdBottomLine($width, $height, $bgColor, $bdrRadius) {
+  width: $width;
+  height: $height;
+  background-color: $bgColor;
+  border-radius: $bdrRadius;
+}
